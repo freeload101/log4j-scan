@@ -1,6 +1,10 @@
 I have not looked at this yet tho:
 https://github.com/0xInfection/LogMePwn
 
+# nice !
+https://www.linkedin.com/feed/update/urn:li:activity:6876536157119897600/?lipi=urn%3Ali%3Apage%3Ad_flagship3_detail_base%3BFs%2Fin2kWRrOJCkVRVwCu9A%3D%3D
+
+
 JNDIExploit.v1.2.zip JNDIExploit-1.2-SNAPSHOT.jar :
 https://rmccurdy.com/.scripts/downloaded/JNDIExploit.v1.2_RENAMED.zip
 
