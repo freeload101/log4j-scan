@@ -1,3 +1,6 @@
+https://rmccurdy.com/.scripts/downloaded/JNDIExploit.v1.2.zip
+https://rmccurdy.com/.scripts/downloaded/JNDIExploit-1.2-SNAPSHOT.jar
+
     killall -9 python3
     killall -9 python3
     killall -9 python3
