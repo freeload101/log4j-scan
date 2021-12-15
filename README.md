@@ -1,5 +1,11 @@
-https://rmccurdy.com/.scripts/downloaded/JNDIExploit.v1.2.zip
-https://rmccurdy.com/.scripts/downloaded/JNDIExploit-1.2-SNAPSHOT.jar
+I have not looked at this yet tho:
+https://github.com/0xInfection/LogMePwn
+
+JNDIExploit.v1.2.zip JNDIExploit-1.2-SNAPSHOT.jar :
+https://rmccurdy.com/.scripts/downloaded/JNDIExploit.v1.2_RENAMED.zip
+
+Pcap:
+https://rmccurdy.com/.scripts/downloaded/JNDIExploit.v1.2.pcap
 
     killall -9 python3
     killall -9 python3
